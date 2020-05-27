@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace CV19.ViewModels.Base
 {
@@ -13,8 +9,8 @@ namespace CV19.ViewModels.Base
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string PropertyName = null)
-        //[CallerMemberName] автоматом подставит имя метода из которого вызывается
         {
+        //[CallerMemberName] автоматом подставит имя метода из которого вызывается
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
         }
 
