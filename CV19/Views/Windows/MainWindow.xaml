@@ -11,12 +11,58 @@
         <!--т.к. добавили в датаконтекст и в Title связали свойство - теперь свойство и заголовок связаны-->
         <vm:MainWindowViewModel/>
     </Window.DataContext>
-    <Grid>
+    <!--<Grid>
         <TextBox Margin="36, 30"
                  Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"
                  TextWrapping="Wrap"
                  VerticalAlignment="Top"
                  HorizontalAlignment="Left"
                  Width="300"/>
-    </Grid>
+    </Grid>-->
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Выход"/>
+            </MenuItem>
+            <MenuItem Header="Помощь">
+                <MenuItem Header="О программе"/>
+            </MenuItem>
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock Text="1234"/>
+            </StatusBarItem>
+            <StatusBarItem>
+                <ProgressBar Width="120" Height="14" Value="30"/>
+            </StatusBarItem>
+        </StatusBar>
+        <TabControl>
+            <TabItem Header="Вкладка 1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30*"/>
+                        <RowDefinition Height="165*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150*"/>
+                        <ColumnDefinition Width="630* "/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Rectangle Grid.Column="0" Grid.Row="0"
+                               Margin="5, 7"
+                               Fill="Blue" Stroke="Red"
+                               StrokeThickness="3"
+                               RadiusX="5" RadiusY="7"/>
+                    
+                    <Ellipse Grid.Column="1" Grid.Row="0"
+                             Fill="Red" Stroke="Black" StrokeThickness="3"/>
+
+                    <GridSplitter Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
+                                  HorizontalAlignment="Right"
+                                  Width="4"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Вкладка 2"></TabItem>
+        </TabControl>
+    </DockPanel>
 </Window>
