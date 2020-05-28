@@ -8,9 +8,9 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="Infrastructure\Commands\Base\" />
     <Folder Include="Models\" />
     <Folder Include="Services\" />
-    <Folder Include="Infrastructure\" />
   </ItemGroup>
 
 </Project>
