@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="d"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:cmd="clr-namespace:CV19.Infrastructure.Commands"
         xmlns:vm="clr-namespace:CV19.ViewModels"
         xmlns:local="clr-namespace:CV19"
         Title="{Binding Title}" 
@@ -11,21 +12,18 @@
         <KeyBinding Modifiers="Ctrl" Key="Q" Command="{Binding CloseApplicationCommnd}"/>
     </Window.InputBindings>
     <Window.DataContext>
-        <!--т.к. добавили в датаконтекст и в Title связали свойство - теперь свойство и заголовок связаны-->
         <vm:MainWindowViewModel/>
     </Window.DataContext>
-    <!--<Grid>
-        <TextBox Margin="36, 30"
-                 Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"
-                 TextWrapping="Wrap"
-                 VerticalAlignment="Top"
-                 HorizontalAlignment="Left"
-                 Width="300"/>
-    </Grid>-->
+    
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
-                <MenuItem Header="Выход" Command="{Binding CloseApplicationCommnd}"/>
+                <!--<MenuItem Header="Выход" Command="{Binding CloseApplicationCommnd}"/>-->
+                <MenuItem Header="Выход">
+                    <MenuItem.Command>
+                        <cmd:CloseApplicationCommnd/>
+                    </MenuItem.Command>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="Помощь">
                 <MenuItem Header="О программе"/>
