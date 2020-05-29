@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CV19WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="WPF test" Height="450" Width="800">
     <Grid>
+        <Button Content="Button" HorizontalAlignment="Left" Height="54" Margin="62,54,0,0" VerticalAlignment="Top" Width="195"/>
+        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="29" Margin="333,67,0,0" VerticalAlignment="Top" Width="86"/>
+        <ComboBox HorizontalAlignment="Left" Height="29" Margin="499,35,0,0" VerticalAlignment="Top" Width="176"/>
+        <TabControl HorizontalAlignment="Left" Height="204" Margin="61,193,0,0" VerticalAlignment="Top" Width="406">
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5">
+                    <RadioButton Content="RadioButton" HorizontalAlignment="Left" Height="62" Margin="36,26,0,0" VerticalAlignment="Top" Width="102"/>
+                    <GridSplitter HorizontalAlignment="Left" Height="166" Margin="221,0,0,0" VerticalAlignment="Top" Width="16"/>
+                    <Slider HorizontalAlignment="Left" Height="27" Margin="36,111,0,0" VerticalAlignment="Top" Width="164"/>
+                    <Label Content="Label" HorizontalAlignment="Left" Height="47" Margin="242,10,0,0" VerticalAlignment="Top" Width="91"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Calendar HorizontalAlignment="Left" Height="279" Margin="499,118,0,0" VerticalAlignment="Top" Width="276"/>
+        <ProgressBar HorizontalAlignment="Left" Height="33" Margin="62,135,0,0" VerticalAlignment="Top" Width="274"/>
 
     </Grid>
 </Window>
