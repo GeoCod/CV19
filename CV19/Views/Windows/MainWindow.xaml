@@ -7,6 +7,9 @@
         xmlns:local="clr-namespace:CV19"
         Title="{Binding Title}" 
         Height="450" Width="800">
+    <Window.InputBindings>
+        <KeyBinding Modifiers="Ctrl" Key="Q" Command="{Binding CloseApplicationCommnd}"/>
+    </Window.InputBindings>
     <Window.DataContext>
         <!--т.к. добавили в датаконтекст и в Title связали свойство - теперь свойство и заголовок связаны-->
         <vm:MainWindowViewModel/>
@@ -55,7 +58,12 @@
                                RadiusX="5" RadiusY="7"/>
 
                     <Ellipse Grid.Column="1" Grid.Row="0"
-                             Fill="Red" Stroke="Black" StrokeThickness="3"/>
+                             Fill="Red" Stroke="Black" StrokeThickness="3">
+                        <Ellipse.InputBindings>
+                            <MouseBinding Command="{Binding CloseApplicationCommnd}"
+                                         MouseAction="LeftDoubleClick" />
+                        </Ellipse.InputBindings>
+                    </Ellipse>
 
                     <GridSplitter Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
                                   Width="4" HorizontalAlignment="Right"/>
