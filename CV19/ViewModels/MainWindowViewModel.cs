@@ -4,12 +4,25 @@ using System.Text;
 using System.Windows;
 using System.Windows.Input;
 using CV19.Infrastructure.Commands;
+using CV19.Models;
 using CV19.ViewModels.Base;
 
 namespace CV19.ViewModels
 {
     internal class MainWindowViewModel : ViewModel
     {
+        #region TestDatapoints : IEnumerable<DataPoint> - Тестовый набор данных для визуализации графиков
+        /// <summary>Тестовый набор данных для визуализации графиков</summary>
+        private IEnumerable<DataPoint> _TestDataPoint;
+
+        /// <summary>Тестовый набор данных для визуализации графиков</summary>
+        public IEnumerable<DataPoint> TestDatapoint
+        {
+            get => _TestDataPoint;
+            set => Set(ref _TestDataPoint, value);
+        } 
+        #endregion
+
         #region Title : string - Заголовок окна
         private string _Title = "Анализ статистики CV19";
 
@@ -80,6 +93,17 @@ namespace CV19.ViewModels
             CloseApplicationCommnd = new LambdaCommand(OnCloseApplicationCommndExecuted, CanCloseApplicationCommndExecute);
 
             #endregion
+
+            var data_points = new List<DataPoint>((int)(360 / 0.1));
+            for(var x = 0d; x <= 360; x =+ 0.1)
+            {
+                const double to_rad = Math.PI / 180;
+                var y = Math.Sin(x * to_rad);
+
+                data_points.Add(new DataPoint { XValue = x, YValue = y });
+            }
+
+            TestDatapoint = data_points;
         }
 
     }
