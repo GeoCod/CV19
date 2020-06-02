@@ -13,13 +13,13 @@ namespace CV19.ViewModels
     {
         #region TestDatapoints : IEnumerable<DataPoint> - Тестовый набор данных для визуализации графиков
         /// <summary>Тестовый набор данных для визуализации графиков</summary>
-        private IEnumerable<DataPoint> _TestDataPoint;
+        private IEnumerable<DataPoint> _TestDataPoints;
 
         /// <summary>Тестовый набор данных для визуализации графиков</summary>
-        public IEnumerable<DataPoint> TestDatapoint
+        public IEnumerable<DataPoint> TestDatapoints
         {
-            get => _TestDataPoint;
-            set => Set(ref _TestDataPoint, value);
+            get => _TestDataPoints;
+            set => Set(ref _TestDataPoints, value);
         } 
         #endregion
 
@@ -95,7 +95,7 @@ namespace CV19.ViewModels
             #endregion
 
             var data_points = new List<DataPoint>((int)(360 / 0.1));
-            for(var x = 0d; x <= 360; x =+ 0.1)
+            for(var x = 0d; x <= 360; x += 0.1)
             {
                 const double to_rad = Math.PI / 180;
                 var y = Math.Sin(x * to_rad);
@@ -103,7 +103,7 @@ namespace CV19.ViewModels
                 data_points.Add(new DataPoint { XValue = x, YValue = y });
             }
 
-            TestDatapoint = data_points;
+            TestDatapoints = data_points;
         }
 
     }

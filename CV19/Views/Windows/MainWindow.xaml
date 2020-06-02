@@ -78,7 +78,7 @@
                                   Width="4" HorizontalAlignment="Right"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Вкладка 2"></TabItem>
+            <TabItem Header="Вкладка"></TabItem>
         </TabControl>
     </DockPanel>
 </Window>
